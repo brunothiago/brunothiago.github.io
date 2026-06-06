@@ -51,11 +51,16 @@
 
     .name {
       margin-top: 0.55rem;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: var(--white);
+      font-family: 'Courier New', 'Menlo', monospace;
+    }
+    .name-eq {
+      color: var(--red);
+      margin: 0 0.4em;
+      font-weight: 700;
     }
 
     .subtitle {
@@ -191,9 +196,26 @@
     .social-link:hover { color: var(--red); }
     .social-link svg { width: 17px; height: 17px; }
 
+    /* ── Arrow hint ── */
+    .arrow-hint {
+      display: flex;
+      justify-content: center;
+      margin: -0.8rem 0 1.6rem;
+    }
+    .arrow-hint svg {
+      width: 22px;
+      height: 22px;
+      color: var(--red);
+      animation: bounce 1.8s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0);    opacity: 0.5; }
+      50%       { transform: translateY(6px);  opacity: 1;   }
+    }
+
     @media (max-width: 380px) {
       .monogram { font-size: 3rem; }
-      .name     { font-size: 1.05rem; }
+      .name     { font-size: 0.9rem; }
       .social   { gap: 1rem; }
     }
   </style>
@@ -202,12 +224,18 @@
   <div class="container">
 
     <header>
-      <div class="monogram">TB</div>
-      <div class="name">Thiago Bruno</div>
-      <div class="subtitle">Software Developer</div>
+      <div class="monogram">THB</div>
+      <div class="name">thiagobruno<span class="name-eq">=</span>thiagoazevedo</div>
+      <div class="subtitle">ENG-TECH-AIE-MCID-FORTAL</div>
     </header>
 
     <div class="divider"></div>
+
+    <div class="arrow-hint" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
 
     <section aria-label="Projetos">
       <button class="acc-trigger" id="acc-btn" aria-expanded="false" aria-controls="acc-panel">
