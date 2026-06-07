@@ -309,8 +309,8 @@
       .then(r => { if (!r.ok) throw new Error(); return r.json(); })
       .then(repos => {
         const items = repos
-          .filter(r => !r.fork && r.description)
-          .slice(0, 15);
+          .filter(r => !r.fork && r.name !== 'brunothiago.github.io')
+          .slice(0, 30);
 
         if (!items.length) {
           list.innerHTML = '<li class="status-msg">Nenhum projeto disponível.</li>';
@@ -322,7 +322,7 @@
             <a class="project-link" href="https://thiagobruno.com.br/${r.name}" target="_blank" rel="noopener noreferrer">
               <div class="project-body">
                 <div class="project-name">${r.name}</div>
-                <div class="project-desc">${r.description}</div>
+                ${r.description ? `<div class="project-desc">${r.description}</div>` : ''}
               </div>
               <span class="p-arrow" aria-hidden="true">→</span>
             </a>
