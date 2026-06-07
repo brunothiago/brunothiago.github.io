@@ -110,15 +110,14 @@
     .acc-trigger:hover { color: var(--red); }
 
     .chevron {
-      width: 14px;
-      height: 14px;
-      stroke: var(--gray);
+      width: 18px;
+      height: 18px;
+      stroke: var(--red);
       fill: none;
-      stroke-width: 1.8;
-      transition: transform 0.35s ease, stroke 0.2s;
+      stroke-width: 2.8;
+      transition: transform 0.35s ease;
       flex-shrink: 0;
     }
-    .acc-trigger:hover .chevron { stroke: var(--red); }
     .acc-trigger[aria-expanded="true"] .chevron { transform: rotate(180deg); }
 
     .acc-panel {
@@ -196,23 +195,6 @@
     .social-link:hover { color: var(--red); }
     .social-link svg { width: 17px; height: 17px; }
 
-    /* ── Arrow hint ── */
-    .arrow-hint {
-      display: flex;
-      justify-content: center;
-      margin: -0.8rem 0 1.6rem;
-    }
-    .arrow-hint svg {
-      width: 22px;
-      height: 22px;
-      color: var(--red);
-      animation: bounce 1.8s ease-in-out infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0);    opacity: 0.5; }
-      50%       { transform: translateY(6px);  opacity: 1;   }
-    }
-
     @media (max-width: 380px) {
       .monogram { font-size: 3rem; }
       .name     { font-size: 0.9rem; }
@@ -230,12 +212,6 @@
     </header>
 
     <div class="divider"></div>
-
-    <div class="arrow-hint" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
-    </div>
 
     <section aria-label="Projetos">
       <button class="acc-trigger" id="acc-btn" aria-expanded="false" aria-controls="acc-panel">
